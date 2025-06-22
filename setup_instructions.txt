@@ -1,0 +1,36 @@
+📦 Resume Screener Bot — Setup Guide (Windows)
+
+1️⃣ Prerequisite:
+   - Python 3.10+ must be installed
+   - Ollama installed with Mistral pulled:
+     > ollama pull mistral
+
+2️⃣ Create Project Folder:
+   > mkdir resume-ai-bot
+   > cd resume-ai-bot
+
+3️⃣ Create Virtual Environment:
+   > python -m venv .venv
+
+4️⃣ Activate Virtual Environment:
+   > .venv\Scripts\activate
+
+5️⃣ Create the required files:
+   - Paste `resume_ai_bot.py` code
+   - Paste `requirements.txt` file
+
+6️⃣ Install Python Dependencies:
+   > pip install -r requirements.txt
+
+7️⃣ Run the Bot:
+   > python resume_ai_bot.py
+
+8️⃣ Open in Browser:
+   > http://127.0.0.1:7860
+
+💬 Now you can ask:
+   - “Suggest web development projects”
+   - “How can I improve my resume?”
+   - “Which certifications should I do for AI?”
+
+🧠 Powered by: Local Ollama Mistral model

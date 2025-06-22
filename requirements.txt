@@ -1,0 +1,7 @@
+
+fpdf
+gTTS
+gradio
+speechrecognition
+requests
+PyMuPDF
