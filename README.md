@@ -1,14 +1,23 @@
----
-title: Resume Screener
-emoji: 💬
-colorFrom: yellow
-colorTo: purple
-sdk: gradio
-sdk_version: 5.0.1
-app_file: app.py
-pinned: false
-license: mit
-short_description: '"Chat. Analyze. Succeed."'
+# 💬 Resume Screener Bot
+
+Resume Screener Bot is an intelligent assistant that helps job seekers and HR professionals interactively screen resumes, analyze content, and ask voice/text questions — all powered by AI.
+
 ---
 
-An example chatbot using [Gradio](https://gradio.app), [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/v0.22.2/en/index), and the [Hugging Face Inference API](https://huggingface.co/docs/api-inference/index).
+
+### 🔧 Features
+
+✅ Upload and analyze resumes (PDF)  
+✅ Ask job-related questions (text or voice input)  
+✅ Ollama LLM API integration  
+✅ Export full chat as `.txt` and `.pdf`  
+✅ Built with Python + Gradio
+
+---
+
+### 🚀 How to Run Locally
+
+1. **Clone the repo**
+```bash
+git clone https://github.com/mounika-1707/resume-screener-bot.git
+cd resume-screener-bot
