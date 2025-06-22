@@ -3,6 +3,7 @@ import speech_recognition as sr
 import requests
 import fitz  # PyMuPDF
 from datetime import datetime
+import os
 
 chat_history = []
 
@@ -78,7 +79,7 @@ def export_chat():
 
     return f"✅ Exported as {txt_filename} and {pdf_filename}"
 
-# ✅ Gradio UI with background and styled heading
+# ✅ Gradio UI
 with gr.Blocks(css="""
 body {
   background: linear-gradient(-45deg, #6c5ce7, #a29bfe, #8e44ad, #9b59b6);
@@ -86,13 +87,11 @@ body {
   animation: gradientBG 10s ease infinite;
   font-family: 'Poppins', sans-serif;
 }
-
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 .gr-markdown h2 {
   text-align: center;
   font-size: 2rem;
@@ -100,21 +99,17 @@ body {
   margin-bottom: 1rem;
   font-weight: bold;
 }
-
 button {
   transition: 0.3s ease;
 }
-
 button:hover {
   transform: scale(1.05);
   background-color: #dedde5c6 !important;
   color: black !important;
 }
-
 .file-upload, .audio-upload {
   transition: transform 0.2s ease;
 }
-
 .file-upload:hover, .audio-upload:hover {
   transform: scale(1.05);
 }
@@ -136,5 +131,7 @@ button:hover {
     submit_btn.click(handle_chat, [msg, resume, mic], chat_output)
     export_btn.click(export_chat, inputs=[], outputs=chat_output)
 
-# 🔥 Launch UI
-ui.launch()
+# ✅ Render-compatible launch
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 7860))
+    ui.launch(server_name="0.0.0.0", server_port=port)
